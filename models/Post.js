@@ -17,12 +17,9 @@ Post.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        post_url: {
-            type: DataTypes.STRING,
+        body: {
+            type: DataTypes.TEXT,
             allowNull: false,
-            validate: {
-                isURL: true
-            }
         },
         // PULL DATA FROM USER MODEL | USER ID
         user_id: {
