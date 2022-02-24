@@ -24,7 +24,7 @@ Post.init(
                 isURL: true
             }
         },
-        // PULL DATA FROM USER MODEL 
+        // PULL DATA FROM USER MODEL | USER ID
         user_id: {
             type: DataTypes.INTEGER,
             references: {
