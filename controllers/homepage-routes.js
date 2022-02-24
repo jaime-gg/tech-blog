@@ -48,6 +48,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// RENDER A SINGLE POST WHEN LOGGED IN 
 router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {id: req.params.id},
