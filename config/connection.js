@@ -1,9 +1,12 @@
+// IMPORT SEQUELIZE 
 const Sequelize = require('sequelize');
 
+// USE DOTENV FOR ENVIRONMENTAL VARIABLES, PROTECT PASSWORDS ETC. 
 require('dotenv').config();
 
 let sequelize;
 
+// IN THE EVENT WE USE JAWSDB IN HEROKU 
 if (process.env.JAWSDB_URL) {
   sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
