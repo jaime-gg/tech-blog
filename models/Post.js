@@ -18,7 +18,7 @@ Post.init(
             allowNull: false
         },
         body: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         // PULL DATA FROM USER MODEL | USER ID
