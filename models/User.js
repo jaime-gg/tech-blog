@@ -1,6 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-// USE FOR PASSWORD PROTECTION LATER 
-// const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
 // CREATE THE USER MODEL
@@ -37,6 +36,18 @@ User.init(
         }
     },
     {
+        hooks: {
+            // SET UP PASSWORD PROTECTION WITH BEFORE-CREATE LIFECYCLE "HOOK" FUNCTIONALITY
+            async beforeCreate(newUserData) {
+              newUserData.password = await bcrypt.hash(newUserData.password, 10);
+              return newUserData;
+            },
+            // IN CASE OF PASSWORD BEING RESET | USER PUT ROUTE 
+            async beforeUpdate(updatedUserData) {
+              updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+              return updatedUserData;
+            }
+        },
         sequelize,
         timestamps: false,
         freezeTableName: true,
