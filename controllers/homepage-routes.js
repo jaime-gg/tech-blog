@@ -48,6 +48,16 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// IF NOT ALREADY LOGGED IN, RENDER THE LOGIN PAGE
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+  }
+
+  res.render('signup');
+});
+
 // RENDER A SINGLE POST WHEN LOGGED IN 
 router.get('/post/:id', (req, res) => {
   Post.findOne({
