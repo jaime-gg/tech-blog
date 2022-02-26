@@ -1,5 +1,9 @@
-# Tech Blog
+# Um Technically: A Tech Blog
+Using my experience with full-stack web development, I was tasked with creating and deploying an application that serves as a sort of tech blog. This was a challenging experience that required me to employ the many skills that I have had to develop over the course of the last couple months. As a result, I have successfully deployed an application to Heroku that utilizes various front-end and back-end portions. 
 
+Through the use of HTML (In the form of express-handlebars), CSS, and JavaScript I created the client side webpage. Then through the use of Node, and several node modules such as Express, Sequelize, MySQL2, Dotenv, Bcrypt, and Express-Sessions was I able to develop the necessary database, routes, and functional code to properly host and deploy this application. 
+
+Thanks to the guidance provided to my in the modules and the acceptance criteria I was given, I was able to implement a Login/Logout system that properly stores data such as emails, usernames, and hashed passwords. Then with the use of conditional express-handlebars html, I was able to allow users who were logged in, the ability to post new content and new comments, as well as edit any content they had posted in the past. 
 
 
 ## Given: User Story
@@ -48,15 +52,15 @@ WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
 
-## Walkthrough 
-
+## Demo
+![a gif demonstrating the functionality og the application](./assets/UM.gif)
 
 ## Installation 
+You may simply visit the deployed website to use this application. Otherwise, you may clone the repo and install on your local device. In the case of the latter, you will need to set environmental variables, use mysql to run the schema.sql in order to establish a database, and properly seed the application using the command 'npm run seed'. 
 
 
 ## Review
 
-You are required to submit BOTH of the following for review:
+* Github Repo: https://github.com/jaime-gg/tech-blog 
 
-* Github Repo: 
-* Deployed Application: 
+* Deployed Application: https://um-technically-blog.herokuapp.com/
