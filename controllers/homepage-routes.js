@@ -4,6 +4,7 @@ const { Post, User, Comment } = require('../models');
 // RENDER THE HOMEPAGE AND IT'S POSTS 
 router.get('/', (req, res) => {
     Post.findAll({
+      order: [['created_at', 'DESC']],
       attributes: [
         'id',
         'body',
